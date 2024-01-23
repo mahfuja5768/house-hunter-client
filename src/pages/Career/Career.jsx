@@ -4,15 +4,13 @@ import CustomButton from "../../shared/CustomButton/customButton";
 const Career = () => {
   return (
     <div className="my-24 px-4">
-      <SectionTitle
-        heading={"  Join Our Team at House-Hunter"}
-      ></SectionTitle>
+      <SectionTitle heading={"  Join Our Team at House-Hunter"}></SectionTitle>
       <div className="py-4">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div
               style={{
-                borderImage: "linear-gradient(to right, #0F1B4C, #e7efff)",
+                borderImage: "linear-gradient(to left, #000, #cda840 )",
                 borderImageSlice: 1,
                 borderWidth: "4px",
                 borderStyle: "solid",
@@ -33,7 +31,7 @@ const Career = () => {
 
             <div
               style={{
-                borderImage: "linear-gradient(to right, #0F1B4C, #e7efff)",
+                borderImage: "linear-gradient(to right, #cda840, #000)",
                 borderImageSlice: 1,
                 borderWidth: "4px",
                 borderStyle: "solid",
@@ -54,7 +52,7 @@ const Career = () => {
 
             <div
               style={{
-                borderImage: "linear-gradient(to right, #0F1B4C, #e7efff)",
+                borderImage: "linear-gradient(to right, #cda840, #000)",
                 borderImageSlice: 1,
                 borderWidth: "4px",
                 borderStyle: "solid",

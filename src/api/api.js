@@ -1,3 +1,4 @@
+import axiosSecure from ".";
 import axiosPublic from "../hooks/useAxiosPublic";
 
 
@@ -27,3 +28,9 @@ export const saveUser = async (user) => {
     // console.log(data);
     return data;
   };
+
+  export const getDetails = async (id) => {
+    // console.log(user)
+  const { data } = await axiosSecure.get(`/properties/${id}`);
+  return data;
+};

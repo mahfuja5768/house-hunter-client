@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import AllProperties from "../AllProperties/AllProperties";
 
 const Home = () => {
   return (
@@ -6,7 +7,7 @@ const Home = () => {
       <Helmet>
         <title>House-Hunter | Home</title>
       </Helmet>
-       {/* <h1>Home</h1> */}
+     <AllProperties/>
     </div>
   );
 };
