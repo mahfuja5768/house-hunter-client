@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
-import logo from '../assets/images/logo.png'
+import logo from "../assets/images/logo.png";
 import UserProfile from "../shared/Navbar/UserProfile";
 
 const Layout = ({ children }) => {
-
   return (
     <div className="drawer ">
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content  flex flex-col">
         {/* Navbar */}
-        <div className="w-full  bg-[#cda840] fixed z-10 shadow-lg">
+        <div className="w-full text-white bg-gray-600 fixed z-10 shadow-lg">
           <div className="max-w-[2520px] mx-auto xl:px-20 md:px-10 sm:px-2 px-4">
             <div className="navbar">
               <div className="navbar-start  flex-none lg:hidden">
@@ -35,21 +34,22 @@ const Layout = ({ children }) => {
                 </label>
               </div>
               <div className="navbar-start ">
-                <img src={logo} className="w-28 bg-black me-2 h-24" alt="logo" />
-                <Link to="/" className=" cursor-pointer font-bold md:text-2xl text-xl">
-                House-Hunter
+                <img src={logo} className="w-28 me-2 h-24" alt="logo" />
+                <Link
+                  to="/"
+                  className=" cursor-pointer font-bold md:text-2xl text-xl"
+                >
+                  House-Hunter
                 </Link>
               </div>
               <div className="navbar-center  flex-none hidden lg:block">
                 <ul className="menu  menu-horizontal text-lg font-semibold">
                   <Navbar></Navbar>
-                 
                 </ul>
               </div>
               <div className="navbar-end hidden lg:flex">
-               <UserProfile flex={'flex'} center={'center'}/>
+                <UserProfile flex={"flex"} center={"center"} />
               </div>
-
             </div>
           </div>
         </div>
@@ -61,10 +61,10 @@ const Layout = ({ children }) => {
           aria-label="close sidebar"
           className="drawer-overlay"
         ></label>
-        <ul className="menu  p-4 w-80 min-h-full bg-primary z-10 md:fixed flex flex-col justify-start pt-24 overflow-x-hidden font-bold   space-y-6 px-2 py-4 absolute inset-y-0 left-0">
+        <ul className="menu  p-4 w-80 min-h-full bg-gray-600 z-10 md:fixed flex flex-col justify-start pt-24 overflow-x-hidden font-bold text-white  space-y-6 px-2 py-4 absolute inset-y-0 left-0">
           <Navbar></Navbar>
           <div className="pl-4">
-          <UserProfile />
+            <UserProfile />
           </div>
         </ul>
       </div>

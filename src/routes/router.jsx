@@ -10,6 +10,11 @@ import OurGoal from "../pages/OurGoal/OurGoal";
 import { getDetails } from "../api/api";
 import PropertyDetails from "../pages/PropertyDetails/PropertyDetails";
 import AllProperties from "../pages/AllProperties/AllProperties";
+import BookAProperty from "../pages/BookAProperty/BookAProperty";
+import DashboardLayout from "./../layouts/DashboardLayout";
+import DashboardHome from "../pages/Dashboard/DashboardHome";
+import UserProfilePage from "../pages/Dashboard/User/UserProfilePage";
+import BookedProperties from "../pages/Dashboard/User/BookedProperties";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +40,14 @@ export const router = createBrowserRouter([
         loader: ({ params }) => getDetails(params.id),
       },
       {
+        path: "/booking/:id",
+        element: (
+          <PrivateRoute>
+            <BookAProperty />
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/career",
         element: (
           <PrivateRoute>
@@ -50,11 +63,23 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <PrivateRoute>{/* <DashboardLayout /> */}</PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
         path: "/dashboard",
-        // element: <DashboardHome></DashboardHome>,
+        element: <DashboardHome />,
+      },
+      {
+        path: "myProfile",
+        element: <UserProfilePage />,
+      },
+      {
+        path: "bookedProperties",
+        element: <BookedProperties />,
       },
     ],
   },

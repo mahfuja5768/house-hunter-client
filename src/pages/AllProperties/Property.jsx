@@ -5,11 +5,6 @@ import Swal from "sweetalert2";
 import useUserInfo from "../../hooks/useUserInfo";
 
 const Property = ({ property }) => {
-  //   console.log(property);
-  const user = useUserInfo();
-//   console.log(user);
-  const navigate = useNavigate();
-  const location = useLocation();
   const {
     picture,
     availability_date,
@@ -20,38 +15,6 @@ const Property = ({ property }) => {
     room_size,
     _id,
   } = property || {};
-
-  const handleBook = () => {
-    if (user) {
-      if (user.role === "renter") {
-        Swal.fire({
-          title: "Success!",
-          text: "Booked!",
-          icon: "success",
-          confirmButtonText: "Done",
-        });
-      } else {
-        return Swal.fire({
-          title: "Error!",
-          text: "Owner can not buy property!",
-          icon: "error",
-          confirmButtonText: "Done",
-        });
-      }
-    } else {
-      return Swal.fire({
-        title: "Error!",
-        text: "You are not login, please login first!",
-        icon: "error",
-        showCancelButton: true,
-        confirmButtonText: "Yes, login!",
-      }).then((result) => {
-        if (result.isConfirmed) {
-          navigate("/login", { state: { from: location } });
-        }
-      });
-    }
-  };
 
   return (
     <div
@@ -93,7 +56,9 @@ const Property = ({ property }) => {
           </p>
         </div>
         <div className="card-actions flex justify-between gap-5 my-6 p-2">
-          <CustomButton onAction={handleBook} buttonText={"Book Now"} />
+          <Link to={`/booking/${_id}`}>
+            <CustomButton buttonText={"Book Now"} />
+          </Link>
           <Link to={`/details/${_id}`}>
             <CustomButton buttonText={"Details"} />
           </Link>

@@ -1,16 +1,11 @@
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import Container from "../../shared/Container/Container";
-import Swal from "sweetalert2";
-import { useState } from "react";
-import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import CustomButton from "../../shared/CustomButton/customButton";
 import { Helmet } from "react-helmet-async";
 
 const PropertyDetails = () => {
   const property = useLoaderData();
-  const [loading, setLoading] = useState(false);
 
-  const navigate = useNavigate();
   const {
     picture,
     address,
@@ -29,7 +24,7 @@ const PropertyDetails = () => {
 
   return (
     <Container>
-          <Helmet>
+      <Helmet>
         <title>House-Hunter | Details</title>
       </Helmet>
       <div className="px-4 mt-24">
@@ -43,7 +38,8 @@ const PropertyDetails = () => {
           </div>
           <div className=" lg:col-span-2  pt-5 px-2">
             <p className="text-xl">
-              <span className="font-semibold text-xl mb-4">Description:</span> {description}
+              <span className="font-semibold text-xl mb-4">Description:</span>{" "}
+              {description}
             </p>
             <div className="grid grid-cols-2 justify-between space-y-3 mt-6 text-lg ">
               <p>
@@ -81,7 +77,9 @@ const PropertyDetails = () => {
               </p>
             </div>
             <div className="card-actions flex justify-between gap-5 my-6 p-2">
-              <CustomButton buttonText={"Book Now"} />
+              <Link to={`/booking/${_id}`}>
+                <CustomButton buttonText={"Book Now"} />
+              </Link>
             </div>
           </div>
         </div>

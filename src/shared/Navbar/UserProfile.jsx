@@ -2,15 +2,22 @@ import { Link, useNavigate } from "react-router-dom";
 import CustomButton from "../CustomButton/customButton";
 import useUserInfo from "../../hooks/useUserInfo";
 import userIcon from "../../assets/images/user.png";
+import Swal from "sweetalert2";
 
 export default function UserProfile({ flex, center }) {
   const user = useUserInfo();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   // console.log(user);
-  const handleLogout =()=>{
-    localStorage.clear()
-    navigate('/login')
-  }
+  const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+    Swal.fire({
+      title: "Success!",
+      text: "Successfully logged out!",
+      icon: "success",
+      confirmButtonText: "Done",
+    });
+  };
   return (
     <div
       className={
@@ -40,29 +47,12 @@ export default function UserProfile({ flex, center }) {
                   className="dropdown-content text-black z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
                 >
                   {user && (
-                    <Link
-                      to="/login"
-                      onClick={handleLogout}
-                      className="btn bg-secondary border-none text-white"
-                    >
-                      Log out
+                    <Link to="/login">
+                      <CustomButton
+                        onAction={handleLogout}
+                        buttonText={"Log Out"}
+                      />
                     </Link>
-                  )}
-                  {!user && (
-                    <div>
-                      <Link
-                        to="/login"
-                        className="btn bg-secondary border-none text-white"
-                      >
-                        Login
-                      </Link>
-                      <Link
-                        to="/signup"
-                        className="btn bg-secondary border-none text-white"
-                      >
-                        sign up
-                      </Link>
-                    </div>
                   )}
                 </ul>
               </div>
@@ -72,17 +62,11 @@ export default function UserProfile({ flex, center }) {
           </div>
         ) : (
           <div className="flex gap-4">
-            <Link
-              to="/login"
-              className="btn bg-secondary border-none text-white"
-            >
-              Login
+            <Link to="/login">
+              <CustomButton buttonText={"Login"} />
             </Link>
-            <Link
-              to="/register"
-              className="btn bg-secondary border-none text-white"
-            >
-              Register
+            <Link to="/register">
+              <CustomButton buttonText={"Register"} />
             </Link>
           </div>
         )}

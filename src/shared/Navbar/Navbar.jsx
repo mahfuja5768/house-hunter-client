@@ -10,8 +10,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-secondary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-secondary hover:bg-transparent"
+              ? " underline decoration-primary text-primary hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-primary "
           }
         >
           Home
@@ -22,8 +22,8 @@ const Navbar = () => {
           to="/allProperties"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-secondary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-secondary hover:bg-transparent"
+              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-primary hover:bg-transparent"
           }
         >
           All Properties
@@ -35,8 +35,8 @@ const Navbar = () => {
           to="/dashboard"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-secondary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-secondary hover:bg-transparent"
+              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-primary"
           }
         >
           Dashboard
@@ -47,8 +47,8 @@ const Navbar = () => {
           to="/career"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-secondary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-secondary hover:bg-transparent"
+              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-primary"
           }
         >
           Career
@@ -59,8 +59,8 @@ const Navbar = () => {
           to="/ourGoal"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-secondary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-secondary hover:bg-transparent"
+              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-primary"
           }
         >
           Our Goal

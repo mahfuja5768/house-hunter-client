@@ -34,3 +34,9 @@ export const saveUser = async (user) => {
   const { data } = await axiosSecure.get(`/properties/${id}`);
   return data;
 };
+
+export const bookAProperty = async (property) => {
+    // console.log(review)
+    const { data } = await axiosSecure.post("/bookings", property);
+    return data;
+  };
