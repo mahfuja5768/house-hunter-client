@@ -10,8 +10,8 @@ const Navbar = () => {
           to="/"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary text-primary hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-primary "
+              ? " underline decoration-black text-black hover:text-black hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-black "
           }
         >
           Home
@@ -23,8 +23,8 @@ const Navbar = () => {
           to="/dashboard"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-primary"
+              ? " underline decoration-black bg-transparent hover:text-black hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-black"
           }
         >
           Dashboard
@@ -35,8 +35,8 @@ const Navbar = () => {
           to="/career"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-primary"
+              ? " underline decoration-black bg-transparent hover:text-black hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-black"
           }
         >
           Career
@@ -47,8 +47,8 @@ const Navbar = () => {
           to="/ourGoal"
           className={({ isActive }) =>
             isActive
-              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-primary"
+              ? " underline decoration-black bg-transparent hover:text-black hover:bg-transparent decoration-2 underline-offset-8"
+              : "bg-transparent hover:text-black"
           }
         >
           Our Goal

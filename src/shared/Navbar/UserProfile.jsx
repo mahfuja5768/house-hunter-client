@@ -30,7 +30,7 @@ export default function UserProfile({ flex, center }) {
         {user ? (
           <div className=" flex flex-col lg:flex-row items-start lg:items-center gap-2 justify-start lg:justify-center mx-2">
             <div>
-              <div className="dropdown dropdown-left">
+              <div className="dropdown dropdown-down">
                 <label
                   tabIndex={0}
                   className="w-full btn m-1 bg-transparent hover:bg-transparent border-none"
