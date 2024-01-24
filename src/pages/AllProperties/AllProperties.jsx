@@ -64,7 +64,7 @@ const AllProperties = () => {
 
   const handleSearch = () => {
     // console.log("ggggggg--->", searchProperty);
-    axiosSecure.get(`search-properties/${searchProperty}`).then((res) => {
+    axiosSecure.get(`search/${searchProperty}`).then((res) => {
       const selectedProps = res.data;
       // console.log(selectedProps);
       setProperties(selectedProps);

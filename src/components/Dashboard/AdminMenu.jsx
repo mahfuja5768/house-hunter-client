@@ -1,33 +1,22 @@
 import {
-  FaAd,
   FaList,
   FaUserAlt,
 } from "react-icons/fa";
 import MenuItem from "./MenuItem";
-import { FaFaceLaughBeam } from "react-icons/fa6";
+import { IoMdAddCircle } from "react-icons/io";
 
 const AdminMenu = () => {
   return (
     <>
       <MenuItem
         icon={FaList}
-        label={"Manage Properties"}
-        address="/dashboard/manageProperties"
+        label={" My Properties"}
+        address="/dashboard/adminAddedProperty"
       ></MenuItem>
       <MenuItem
-        icon={FaAd}
-        label={"Advertise Properties"}
-        address="/dashboard/advertiseProperties"
-      ></MenuItem>
-      <MenuItem
-        icon={FaUserAlt}
-        label={"Manage Users"}
-        address="/dashboard/manageUsers"
-      ></MenuItem>
-      <MenuItem
-        icon={FaFaceLaughBeam}
-        label={"Manage Reviews"}
-        address="/dashboard/manageReviews"
+        icon={IoMdAddCircle}
+        label={"Add New Properties"}
+        address="/dashboard/addProperties"
       ></MenuItem>
     </>
   );

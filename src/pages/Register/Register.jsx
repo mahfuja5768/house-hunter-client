@@ -63,7 +63,7 @@ const Register = () => {
         icon: "success",
         confirmButtonText: "Done",
       });
-      navigate("/");
+      navigate("/dashboard");
     } else {
       Swal.fire({
         title: "Error!",

@@ -48,7 +48,7 @@ export default function UserProfile({ flex, center }) {
                 >
                   {user && (
                     <Link to="/login">
-                      <CustomButton
+                      <CustomButton wFull
                         onAction={handleLogout}
                         buttonText={"Log Out"}
                       />

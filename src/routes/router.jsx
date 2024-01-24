@@ -14,7 +14,11 @@ import BookAProperty from "../pages/BookAProperty/BookAProperty";
 import DashboardLayout from "./../layouts/DashboardLayout";
 import DashboardHome from "../pages/Dashboard/DashboardHome";
 import UserProfilePage from "../pages/Dashboard/User/UserProfilePage";
-import BookedProperties from "../pages/Dashboard/User/BookedProperties";
+import BookedProperties from "../pages/Dashboard/User/BookedProperties/BookedProperties";
+import MyAddedProperties from "../pages/Dashboard/Admin/MyAddedProperties/MyAddedProperties";
+import AddNewProperty from "../pages/Dashboard/Admin/AddNewProperty";
+import UpdateProterty from "../pages/Dashboard/Admin/UpdateProperty";
+import UpdateProperty from "../pages/Dashboard/Admin/UpdateProperty";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +50,9 @@ export const router = createBrowserRouter([
             <BookAProperty />
           </PrivateRoute>
         ),
+        loader: ({ params }) => getDetails(params.id),
       },
+
       {
         path: "/career",
         element: (
@@ -80,6 +86,19 @@ export const router = createBrowserRouter([
       {
         path: "bookedProperties",
         element: <BookedProperties />,
+      },
+      {
+        path: "adminAddedProperty",
+        element: <MyAddedProperties />,
+      },
+      {
+        path: "addProperties",
+        element: <AddNewProperty />,
+      },
+      {
+        path: "update/:id",
+        element: <UpdateProperty />,
+        loader: ({ params }) => getDetails(params.id),
       },
     ],
   },

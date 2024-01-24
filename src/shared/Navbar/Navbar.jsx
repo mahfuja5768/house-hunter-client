@@ -17,18 +17,6 @@ const Navbar = () => {
           Home
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to="/allProperties"
-          className={({ isActive }) =>
-            isActive
-              ? " underline decoration-primary bg-transparent hover:text-primary hover:bg-transparent decoration-2 underline-offset-8"
-              : "bg-transparent hover:text-primary hover:bg-transparent"
-          }
-        >
-          All Properties
-        </NavLink>
-      </li>
 
       <li>
         <NavLink
@@ -65,12 +53,6 @@ const Navbar = () => {
         >
           Our Goal
         </NavLink>
-      </li>
-      <li>
-        <Link to="/dashboard/cart">
-          <FaBell className="text-primary"></FaBell>
-          {/* <div className="badge badge-secondary">+{notification.length}</div> */}
-        </Link>
       </li>
     </>
   );

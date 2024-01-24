@@ -79,7 +79,7 @@ const Sidebar = () => {
               ></MenuItem>
 
               {userRole === "renter" && <UserMenu></UserMenu>}
-              {userRole === "admin" && <AdminMenu></AdminMenu>}
+              {userRole === "owner" && <AdminMenu></AdminMenu>}
             </nav>
           </div>
         </div>

@@ -13,11 +13,20 @@ import { useState } from "react";
 export default function BookAProperty() {
   const [error, setError] = useState(null);
   const { id } = useParams();
-  // console.log(id);
   const user = useUserInfo();
-  //   console.log(user);
   const navigate = useNavigate();
   const location = useLocation();
+  const property = useLoaderData();
+
+  const {
+    picture,
+    address,
+    availability_date,
+    city,
+    email,
+    name,
+    _id,
+  } = property || {};
 
   const handleBook = async (e) => {
     e.preventDefault();
@@ -35,10 +44,15 @@ export default function BookAProperty() {
       }
 
       const bookingInfo = {
-        name: user?.name,
-        email: user?.email,
+         userName: user?.name,
+        userEmail: user?.email,
         phnNum,
         propertyId: id,
+        picture,
+        address,
+        availability_date,
+        city,
+        email,
       };
 
       const saveBookingInfo = await bookAProperty(bookingInfo);
