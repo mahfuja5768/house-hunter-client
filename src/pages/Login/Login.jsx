@@ -25,8 +25,9 @@ const Login = () => {
 
     const saveUserInfo = await logUser(userInfo);
     console.log(saveUserInfo);
-    if (saveUserInfo.name) {
-      localStorage.setItem("user", JSON.stringify(saveUserInfo));
+    if (saveUserInfo.auth) {
+      localStorage.setItem("user", JSON.stringify(saveUserInfo.user));
+      localStorage.setItem("token", JSON.stringify(saveUserInfo.auth));
       Swal.fire({
         title: "Success!",
         text: "Successfully user logged in!",

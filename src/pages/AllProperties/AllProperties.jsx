@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import Container from "../../shared/Container/Container";
 import Property from "./Property";
@@ -72,9 +71,6 @@ const AllProperties = () => {
   };
   return (
     <Container>
-      <Helmet>
-        <title>Dream-Property | All Properties</title>
-      </Helmet>
       <SectionTitle heading={"All Properties"}></SectionTitle>
 
       <div className="flex justify-evenly flex-col lg:flex-row items-center ">

@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const UpdateProperty = () => {
  const property = useLoaderData();
   const { id } = useParams();
-
+console.log(id);
     const {
       address,
       availability_date,
@@ -25,7 +25,6 @@ const UpdateProperty = () => {
   const [error, setError] = useState(null);
   const user = useUserInfo();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleBook = async (e) => {
     e.preventDefault();
@@ -67,6 +66,7 @@ const UpdateProperty = () => {
       rent_per_month,
       room_size,
     };
+    console.log('f', id);
     const saveProperty = await axiosSecure.patch(`/admin-properties/${id}`, property);
 
     console.log(saveProperty);

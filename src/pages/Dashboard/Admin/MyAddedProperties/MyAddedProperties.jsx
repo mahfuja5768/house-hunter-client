@@ -1,4 +1,3 @@
-
 import Container from "../../../../shared/Container/Container";
 import { Helmet } from "react-helmet-async";
 import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
@@ -10,24 +9,22 @@ import { useQuery } from "@tanstack/react-query";
 import { deleteOwnerAddedProperty } from "../../../../api/api";
 import Swal from "sweetalert2";
 
-
 const MyAddedProperties = () => {
-
   const user = useUserInfo();
 
-    const { refetch, data: myAddedProperties = [] } = useQuery({
-      queryKey: ["myAddedProperties", user?.email],
-      queryFn: async () => {
-        const res = await axiosSecure.get(`/admin-properties?email=${user?.email}`)
-        
-        const myAddedProperties = await res.data;
-        // console.log(myAddedProperties);
-        return myAddedProperties;
-      },
-    });
+  const { refetch, data: myAddedProperties = [] } = useQuery({
+    queryKey: ["myAddedProperties", user?.email],
+    queryFn: async () => {
+      const res = await axiosSecure.get(
+        `/admin-properties?email=${user?.email}`
+      );
+      const myAddedProperties = await res.data;
+      return myAddedProperties;
+    },
+  });
 
-  const handleDelete = async(id)=> {
- try {
+  const handleDelete = async (id) => {
+    try {
       const addedProperty = await deleteOwnerAddedProperty(id);
       // console.log(addedProperty);
       Swal.fire({
@@ -45,7 +42,8 @@ const MyAddedProperties = () => {
         icon: "error",
         confirmButtonText: "Done",
       });
-    }  }
+    }
+  };
 
   return (
     <Container>

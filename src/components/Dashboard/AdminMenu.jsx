@@ -18,6 +18,11 @@ const AdminMenu = () => {
         label={"Add New Properties"}
         address="/dashboard/addProperties"
       ></MenuItem>
+      <MenuItem
+        icon={FaList}
+        label={"All Bookings"}
+        address="/dashboard/allBookings"
+      ></MenuItem>
     </>
   );
 };

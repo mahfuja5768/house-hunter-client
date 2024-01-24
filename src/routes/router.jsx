@@ -19,6 +19,7 @@ import MyAddedProperties from "../pages/Dashboard/Admin/MyAddedProperties/MyAdde
 import AddNewProperty from "../pages/Dashboard/Admin/AddNewProperty";
 import UpdateProterty from "../pages/Dashboard/Admin/UpdateProperty";
 import UpdateProperty from "../pages/Dashboard/Admin/UpdateProperty";
+import AllBookings from "../pages/Dashboard/Admin/AllBookings";
 
 export const router = createBrowserRouter([
   {
@@ -90,6 +91,10 @@ export const router = createBrowserRouter([
       {
         path: "adminAddedProperty",
         element: <MyAddedProperties />,
+      },
+      {
+        path: "allBookings",
+        element: <AllBookings />,
       },
       {
         path: "addProperties",
